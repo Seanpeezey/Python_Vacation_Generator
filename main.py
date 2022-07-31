@@ -107,7 +107,7 @@ if random_dest == "New York City":
 #        print(random_dest)
 
 if random_dest == "St Augustine, Florida":
-    print("You are going to New York City!")
+    print("You are going to St Augustine, Florida!")
 
     are_you_happy = input("Are you happy with this selection? (y/n) ")
 
