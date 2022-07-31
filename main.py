@@ -152,25 +152,39 @@ if random_dest == "New York City":
             remove_subway = nyc_transportation_list.pop(1)
             random_trans_pop_nyc = random.choice(nyc_transportation_list)
             print(f'You are now going to use a {random_trans_pop_nyc}!')
-            are_you_happy = input(f'Are you happy with this location? (y/n) ')
+            are_you_happy = input(f'Are you happy with taking {random_trans_pop_nyc (y/n)} ')
             if are_you_happy == "y":
                 random_dest = random_trans_pop_nyc
                 print(f'Youn are now going to {random_trans_pop_nyc}!')
     
-            
-
-
 # New York Entertainment Functions
      if random_dest == "New York City":
-         random_ent = random.choice(nyc_entertainment_list)
-         random_trans_pop_nyc = random.choice(nyc_transportation_list)
-         print(f'You will now be using a {random_trans_pop_nyc} to get around.')
-         are_you_happy = input(f'Are you happy with taking a {random_trans_pop_nyc} to get around? (y/n) ')
-         if are_you_happy == "y":
-          random_trans_nyc = random_trans_pop_nyc
-          print(f'You are now going with a {random_trans_pop_nyc}! ')
-     elif are_you_happy == "n":
-        print()
+         random_ent_nyc = random.choice(nyc_entertainment_list)
+
+         if random_ent_nyc == "Broadway":
+            are_you_happy = input(f'Are you happy with going to {random_ent_nyc}? (y/n) ')
+            if are_you_happy == "y":
+                print(f'Great! You will be going to the world famous {random_ent_nyc}!')
+            elif are_you_happy == "n":
+                remove_broadway = nyc_entertainment_list.pop(0)
+                random_ent_pop_nyc = random.choice(nyc_entertainment_list)
+                print(f'You are now going to {random_ent_pop_nyc}')
+                are_you_happy = input(f'Are you happy going to {random_ent_pop_nyc}? (y/n) ')
+                if are_you_happy == "y":
+                    random_ent_nyc = random_ent_pop_nyc
+                    print(f'You are now going to {random_ent_pop_nyc}!')
+         elif random_ent_nyc == "Top of The Rock: Observation Deck":
+              are_you_happy = input(f'Are you happy with going to {random_ent_nyc}? (y/n) ')
+              if are_you_happy == "y":
+                 print(f'Great! You will be going to the world famous {random_ent_nyc}!')
+              elif are_you_happy == "n":
+                remove_broadway = nyc_entertainment_list.pop(0)
+                random_ent_pop_nyc = random.choice(nyc_entertainment_list)
+                print(f'You are now going to {random_ent_pop_nyc}')
+                are_you_happy = input(f'Are you happy going to {random_ent_pop_nyc}? (y/n) ')
+                if are_you_happy == "y":
+                    random_ent_nyc = random_ent_pop_nyc
+                    print(f'You are now going to {random_ent_pop_nyc}!')
 
 
 
@@ -221,25 +235,25 @@ elif random_dest == "Boston":
      if random_dest == "St Augustine,Florida":
       random_rest_florida = random.choice(florida_restaurant_list)
 
-     if random_rest_florida == "Salt Life":
-      are_you_happy = input(f'Are you happy with {random_rest_florida}? (y/n) ')
-     if are_you_happy =="y":
+      if random_rest_florida == "Salt Life":
+       are_you_happy = input(f'Are you happy with {random_rest_florida}? (y/n) ')
+       if are_you_happy =="y":
         print("Okay , great!")
-     elif are_you_happy == "n":
+      elif are_you_happy == "n":
         print("we will figure that out")
 
-     elif random_rest_florida == "Harry's Seafood, Bar & Grille":
-      are_you_happy = input(f'Are you happy with {random_rest_florida}? (y/n) ')
-     if are_you_happy == "y":
+      elif random_rest_florida == "Harry's Seafood, Bar & Grille":
+       are_you_happy = input(f'Are you happy with {random_rest_florida}? (y/n) ')
+       if are_you_happy == "y":
         print("Great! that sounds good!")
-     elif are_you_happy == "n":
+       elif are_you_happy == "n":
         print("Wait a dang second!")
 
-     elif random_rest_florida == "Prohibition Kitchen":
-      are_you_happy = input(f'Are you happy with {random_rest_florida}? (y/n) ')
-     if are_you_happy == "y":
+      elif random_rest_florida == "Prohibition Kitchen":
+       are_you_happy = input(f'Are you happy with {random_rest_florida}? (y/n) ')
+       if are_you_happy == "y":
         print("Great! that sounds good!")
-     elif are_you_happy == "n":
+       elif are_you_happy == "n":
         print("Wait a dang second!")
 
 # St Augustine,Florida Transportation Functions
@@ -255,4 +269,4 @@ elif random_dest == "Boston":
 if random_dest == "New York City":
     confirm_trip = input(f'Are you happy with all of your vacation details? (y/n) ')
     if confirm_trip == "y":
-     print(f'Congratulations on confirming your vacation details. You will be going to {random_dest}. Once there, you will be using {random_trans_nyc} to get to {random_ent}. Once there, you will enjoy one of {random_dest}s many attractions. After {random_ent} you will take a {random_trans_nyc} to {random_rest} where you will enjoy a great meal!')
+     print(f'Congratulations on confirming your vacation details. You will be going to {random_dest}. Once there, you will be using {random_trans_nyc} to get to {random_ent_nyc}. Once there, you will enjoy one of {random_dest}s many attractions. After {random_ent_nyc} you will take a {random_trans_nyc} to {random_rest} where you will enjoy a great meal!')
