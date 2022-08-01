@@ -10,7 +10,7 @@ nyc_entertainment_list = ["Broadway", "Top of The Rock: Observation Deck", "Mada
 
 #These next three lists will pertain to our second destination. St Augustine, Florida.
 
-florida_restaurant_list = ["Salt Life", "Harry's Seafood, Bar & Grille","Prohibition Kitchen"]
+florida_restaurant_list = ["Salt Life", "Harry's Seafood Bar & Grille","Prohibition Kitchen"]
 florida_transportation_list =["Old Town Trolley Tours St Augustine", "Taxi Cab", "Salty Seas Transportation"]
 florida_entertainment_list = ["Castillo de San Marcos National Monument", "Ripley's Believe It or Not!", "Ponce de Leon's Fountain of Youth Archaeological Park","Lightner Museum"]
 
@@ -46,11 +46,12 @@ if random_dest == "New York City":
             if are_you_happy == "y":
                 random_dest = random_dest_pop_florida
                 print(f'Youn are now going to {random_dest_pop_florida}!')
-         elif random_dest_pop == "Boston":
-              remove_boston = destination_list.pop(0)
-              random_dest_pop_boston = random.choice(destination_list)
-              print(f'You are going to {random_dest_pop_boston}! ')
-              are_you_happy = input(f'Are you happy with {random_dest_pop_boston}? (y/n) ')
+            elif random_dest_pop == "Boston":
+              print(f'{random_dest_pop} is your final destination option. If you would like to continue with the generator, please choose "y" in the following input. ')
+              are_you_happy = input(f'{random_dest_pop} is the final destination choice, if you would like to continue with the vacation generator type "y".')
+              if are_you_happy == "y":
+                random_dest = random_dest_pop_florida
+                print(f'Great! you will be going to {random_dest_pop}!')
 # Boston destination functions. Including .pop() function(s) for when destination needs to be changed. 
         
 elif random_dest == "Boston":
@@ -74,9 +75,13 @@ elif random_dest == "Boston":
             if are_you_happy == "y":
                 random_dest = random_dest_pop_florida
                 print(f'Youn are now going to {random_dest_pop_florida}!')
-        elif random_dest_pop_boston == "New York City":
+            elif random_dest_pop_boston == "New York City":
              print(f'{random_dest} is your last destination choice!')
              are_you_happy = input(f'Are you happy with {random_dest}? ')
+             if are_you_happy == "y":
+                random_dest = random_dest_pop_florida
+                print(f'Great! you will be going to {random_dest_pop_florida}!')
+
     
 # St Augustine Florida destination function. Including .pop() function(s) for when the destination needs to be changed.
 
@@ -105,36 +110,101 @@ elif random_dest == "St Augustine,Florida":
                  if random_dest_pop_boston == "New York City":
                     print(f'There are no more options! So we will keep this last one!')
                     random_dest_pop_boston = random_dest
-                    print(random_dest_pop_boston)
+                    print(f'Great, you are going to {random_dest_pop_boston}!')
 
-        # elif random_dest_pop_florida == "New York City":
-        #      print(f'{random_dest} is your last destination choice!')
-        #      are_you_happy = input(f'Are you happy with {random_dest}? ')
-    
-    
+
+ # New York City Restaurant List Functions   
 if random_dest == "New York City":
-    random_rest = random.choice(nyc_restaurant_list)
+    random_rest_nyc = random.choice(nyc_restaurant_list)
 
-    if random_rest == "Carmine's Italian Restaurant":
-      are_you_happy = input(f'Are you happy with {random_rest}? (y/n) ')
-      if are_you_happy =="y":
-        print("Okay , great!")
-      elif are_you_happy == "n":
-        print("we will figure that out")
+    if random_rest_nyc == "Carmine's Italian Restaurant":
+         are_you_happy = input(f'Are you happy with {random_rest_nyc}? ')
+         if are_you_happy == "y":
+             print(f'Great! you will be dining at {random_rest_nyc}')
+         elif are_you_happy == "n":
+            remove_carmines = nyc_restaurant_list.pop(0)
+            random_rest_pop_nyc = random.choice(nyc_restaurant_list)
+            print(f'You are now going to use a {random_rest_nyc}!')
+            are_you_happy = input(f'Are you happy with dining at {random_rest_nyc} (y/n) ')
+            if are_you_happy == "y":
+                random_rest_nyc = random_rest_pop_nyc
+                print(f'Youn are now going to dine at {random_rest_nyc}!')
+            elif are_you_happy == "n":
+                 if random_rest_nyc == "STK Steakhouse Midtown NYC":
+                    remove_stk = nyc_restaurant_list.pop(1)
+                    random_rest_pop_nyc = random.choice(nyc_restaurant_list)
+                    print(f'You are now going to dine at {random_rest_pop_nyc}.')
+                    are_you_happy = input(f'Are you happy dining at {random_rest_pop_nyc}? (y/n) ')
+                    if are_you_happy == "y":
+                        random_rest_nyc = random_rest_pop_nyc
+                        print(f'Great! you will be eating at {random_rest_pop_nyc}!')
+                    elif are_you_happy == "n":
+                        if random_rest_pop_nyc == "La Grande Boucherie":
+                            print(f'We are going to use a {random_rest_pop_nyc} as your choice of restaurant, because it is the last option.')
+                            are_you_happy = input(f'{random_rest_pop_nyc} is your last option. Please type "y" to continue using the vacation generator. (y/n) ')
+                            if are_you_happy == "y":
+                                random_trans_nyc = random_rest_pop_nyc
+                                print(f'Great! you will be dining at {random_rest_pop_nyc}!')
 
-    elif random_rest == "La Grande Boucherie":
-      are_you_happy = input(f'Are you happy with {random_rest}? (y/n) ')
-      if are_you_happy == "y":
-        print("Great! that sounds good!")
-      elif are_you_happy == "n":
-        print("Wait a dang second!")
 
-    elif random_rest =="STK Steakhouse Midtown NYC":
-      are_you_happy = input(f'Are you okay with {random_rest} as a selection? (y/n) ')
-      if are_you_happy == "y":
-        print(f'Great! you will be going to {random_rest}, now lets figure out what kind of transportation you will be using.')
-      elif are_you_happy == "n":
-        print("Give me a minute!")
+    elif random_rest_nyc == "STK Steakhouse Midtown":
+         are_you_happy = input(f'Are you happy with {random_rest_nyc}? ')
+         if are_you_happy == "y":
+             print(f'Great! you will be dining at {random_rest_nyc}')
+         elif are_you_happy == "n":
+            remove_stk = nyc_restaurant_list.pop(1)
+            random_rest_pop_nyc = random.choice(nyc_restaurant_list)
+            print(f'You are now going to use a {random_rest_nyc}!')
+            are_you_happy = input(f'Are you happy with dining at {random_rest_nyc} (y/n) ')
+            if are_you_happy == "y":
+                random_rest_nyc = random_rest_pop_nyc
+                print(f'Youn are now going to dine at {random_rest_nyc}!')
+            elif are_you_happy == "n":
+                 if random_rest_nyc == "Carmine's Italian Restaurant":
+                    remove_stk = nyc_restaurant_list.pop(0)
+                    random_rest_pop_nyc = random.choice(nyc_restaurant_list)
+                    print(f'You are now going to dine at {random_rest_pop_nyc}.')
+                    are_you_happy = input(f'Are you happy dining at {random_rest_pop_nyc}? (y/n) ')
+                    if are_you_happy == "y":
+                        random_rest_nyc = random_rest_pop_nyc
+                        print(f'Great! you will be eating at {random_rest_pop_nyc}!')
+                    elif are_you_happy == "n":
+                        if random_rest_pop_nyc == "La Grande Boucherie":
+                            print(f'We are going to use a {random_rest_pop_nyc} as your choice of restaurant, because it is the last option.')
+                            are_you_happy = input(f'{random_rest_pop_nyc} is your last option. Please type "y" to continue using the vacation generator. (y/n) ')
+                            if are_you_happy == "y":
+                                random_trans_nyc = random_rest_pop_nyc
+                                print(f'Great! you will be dining at {random_rest_pop_nyc}!')
+
+
+    elif random_rest_nyc == "La Grande Boucherie":
+         are_you_happy = input(f'Are you happy with {random_rest_nyc}? ')
+         if are_you_happy == "y":
+             print(f'Great! you will be dining at {random_rest_nyc}')
+         elif are_you_happy == "n":
+            remove_boucherie = nyc_restaurant_list.pop(2)
+            random_rest_pop_nyc = random.choice(nyc_restaurant_list)
+            print(f'You are now going to use a {random_rest_nyc}!')
+            are_you_happy = input(f'Are you happy with dining at {random_rest_nyc} (y/n) ')
+            if are_you_happy == "y":
+                random_rest_nyc = random_rest_pop_nyc
+                print(f'Youn are now going to dine at {random_rest_nyc}!')
+            elif are_you_happy == "n":
+                 if random_rest_nyc == "STK Steakhouse Midtown NYC":
+                    remove_stk = nyc_restaurant_list.pop(1)
+                    random_rest_pop_nyc = random.choice(nyc_restaurant_list)
+                    print(f'You are now going to dine at {random_rest_pop_nyc}.')
+                    are_you_happy = input(f'Are you happy dining at {random_rest_pop_nyc}? (y/n) ')
+                    if are_you_happy == "y":
+                        random_rest_nyc = random_rest_pop_nyc
+                        print(f'Great! you will be eating at {random_rest_pop_nyc}!')
+                    elif are_you_happy == "n":
+                        if random_rest_pop_nyc == "Carmine's Italian Restaurant":
+                            print(f'We are going to use a {random_rest_pop_nyc} as your choice of restaurant, because it is the last option.')
+                            are_you_happy = input(f'{random_rest_pop_nyc} is your last option. Please type "y" to continue using the vacation generator. (y/n) ')
+                            if are_you_happy == "y":
+                                random_trans_nyc = random_rest_pop_nyc
+                                print(f'Great! you will be dining at {random_rest_pop_nyc}!')
 
 # New York Transportation Functions
 if random_dest == "New York City":
@@ -229,89 +299,191 @@ if random_dest == "New York City":
 
 
 # New York Entertainment Functions
+
 if random_dest == "New York City":
     random_ent_nyc = random.choice(nyc_entertainment_list)
 
     if random_ent_nyc == "Broadway":
-        are_you_happy = input(f'Are you happy with going to {random_ent_nyc}? (y/n) ')
-        if are_you_happy == "y":
-           print(f'Great! You will be going to the world famous {random_ent_nyc}!')
-        elif are_you_happy == "n":
-             remove_broadway = nyc_entertainment_list.pop(0)
-             random_ent_pop_nyc = random.choice(nyc_entertainment_list)
-             print(f'You are now going to {random_ent_pop_nyc}')
-             are_you_happy = input(f'Are you happy going to {random_ent_pop_nyc}? (y/n) ')
-             if are_you_happy == "y":
+         are_you_happy = input(f'Are you happy with {random_ent_nyc}? ')
+         if are_you_happy == "y":
+             print(f'Great! you will be going to {random_ent_nyc}!')
+         elif are_you_happy == "n":
+            remove_broadway = nyc_entertainment_list.pop(0)
+            random_ent_pop_nyc = random.choice(nyc_transportation_list)
+            print(f'You are now going to {random_ent_pop_nyc}!')
+            are_you_happy = input(f'Are you happy going to {random_ent_pop_nyc}? (y/n) ')
+            if are_you_happy == "y":
                 random_ent_nyc = random_ent_pop_nyc
-                print(f'You are now going to {random_ent_pop_nyc}!')
+                print(f'Youn are now going to {random_ent_pop_nyc}!')
+            elif are_you_happy == "n":
+                 if random_ent_pop_nyc == "Top of The Rock: Observation Deck":
+                    remove_top_of_the_rock = nyc_entertainment_list.pop(1)
+                    random_ent_pop_nyc = random.choice(nyc_transportation_list)
+                    print(f'You are now going to to {random_ent_pop_nyc}.')
+                    are_you_happy = input(f'Are you happy going to {random_ent_pop_nyc}? (y/n) ')
+                    if are_you_happy == "y":
+                        random_ent_nyc = random_ent_pop_nyc
+                        print(f'Great! you will be going to {random_ent_pop_nyc}!')
+                    elif are_you_happy == "n":
+                        if random_ent_pop_nyc == "Madam Tussauds New York":
+                            print(f'We are going to use a {random_ent_pop_nyc} as your form of entertainment because it is the last option.')
+                            are_you_happy = input(f'{random_ent_pop_nyc} is your last option. Please type "y" to continue using the vacation generator. (y/n) ')
+                            if are_you_happy == "y":
+                                random_ent_nyc = random_ent_pop_nyc
+                                print(f'Great! you will be going to {random_ent_pop_nyc}!')
 
-    elif random_ent_nyc == "Top of The Rock: Observation Deck":
-          are_you_happy = input(f'Are you happy with going to {random_ent_nyc}? (y/n) ')
-          if are_you_happy == "y":
-             print(f'Great! You will be going to the world famous {random_ent_nyc}!')
-          elif are_you_happy == "n":
-               remove_top_of_rock = nyc_entertainment_list.pop(1)
-               random_ent_pop_nyc = random.choice(nyc_entertainment_list)
-               print(f'You are now going to {random_ent_pop_nyc}')
-               are_you_happy = input(f'Are you happy going to {random_ent_pop_nyc}? (y/n) ')
-               if are_you_happy == "y":
-                    random_ent_nyc = random_ent_pop_nyc
-                    print(f'You are now going to {random_ent_pop_nyc}!')
-               elif are_you_happy == "n":
-                    if random_ent_pop_nyc == "Broadway":
-                        print(f'We will keep use this option as your entertainment, being that its the last option. Select "y" to continue with the vacaton generator.')
-                        are_you_happy = input(f'You are going to the world famous {random_ent_pop_nyc}, Are you happy with this option? (y/n) ')
-                        if are_you_happy == "y":
-                            random_ent_nyc = random_ent_pop_nyc
-                            print(f'Congrats, you are going to {random_ent_pop_nyc}')
-
-    elif random_ent_nyc == "Madame Tussauds New York":
-          are_you_happy = input(f'Are you happy with going to {random_ent_nyc}? (y/n) ')
-          if are_you_happy == "y":
-           print(f'Great, you will be going to {random_ent_nyc}!')
-          elif are_you_happy == "n":
-               remove_madame_tussauds = nyc_entertainment_list.pop(2)
-               random_ent_pop_nyc = random.choice(nyc_entertainment_list)
-               print(f'You are now going to {random_ent_pop_nyc}')
-               are_you_happy = input(f'Are you happy going to {random_ent_pop_nyc}? (y/n) ')
-               if are_you_happy == "y":
-                 print(f'Great! you are going to {random_ent_pop_nyc}!')
-               elif are_you_happy == "n":
-                     if random_ent_pop_nyc == "Broadway":
-                        print(f'We will keep use this option as your entertainment, being that its the last option. Select "y" to continue with the vacaton generator.')
-                        are_you_happy = input(f'You are going to the world famous {random_ent_pop_nyc}, Are you happy with this option? (y/n) ')
-                        if are_you_happy == "y":
-                            random_ent_nyc = random_ent_pop_nyc
-                            print(f'Congrats, you are going to {random_ent_pop_nyc}')
+                            
+    if random_ent_nyc == "Top of The Rock: Observation Deck":
+         are_you_happy = input(f'Are you happy with {random_ent_nyc}? ')
+         if are_you_happy == "y":
+             print(f'Great! you will be going to {random_ent_nyc}!')
+         elif are_you_happy == "n":
+            remove_top_of_the_rock = nyc_entertainment_list.pop(1)
+            random_ent_pop_nyc = random.choice(nyc_transportation_list)
+            print(f'You are now going to {random_ent_pop_nyc}!')
+            are_you_happy = input(f'Are you happy going to {random_ent_pop_nyc}? (y/n) ')
+            if are_you_happy == "y":
+                random_ent_nyc = random_ent_pop_nyc
+                print(f'Youn are now going to {random_ent_pop_nyc}!')
+            elif are_you_happy == "n":
+                 if random_ent_pop_nyc == "Broadway":
+                    remove_top_of_the_rock = nyc_entertainment_list.pop(0)
+                    random_ent_pop_nyc = random.choice(nyc_transportation_list)
+                    print(f'You are now going to to {random_ent_pop_nyc}.')
+                    are_you_happy = input(f'Are you happy going to {random_ent_pop_nyc}? (y/n) ')
+                    if are_you_happy == "y":
+                        random_ent_nyc = random_ent_pop_nyc
+                        print(f'Great! you will be going to {random_ent_pop_nyc}!')
+                    elif are_you_happy == "n":
+                        if random_ent_pop_nyc == "Madam Tussauds New York":
+                            print(f'We are going to use a {random_ent_pop_nyc} as your form of entertainment because it is the last option.')
+                            are_you_happy = input(f'{random_ent_pop_nyc} is your last option. Please type "y" to continue using the vacation generator. (y/n) ')
+                            if are_you_happy == "y":
+                                random_ent_nyc = random_ent_pop_nyc
+                                print(f'Great! you will be going to {random_ent_pop_nyc}!')
                             
 
-
+   if random_ent_nyc == "Madam Tussauds New York":
+         are_you_happy = input(f'Are you happy with {random_ent_nyc}? ')
+         if are_you_happy == "y":
+             print(f'Great! you will be going to {random_ent_nyc}!')
+         elif are_you_happy == "n":
+            remove_tussauds = nyc_entertainment_list.pop(2)
+            random_ent_pop_nyc = random.choice(nyc_transportation_list)
+            print(f'You are now going to {random_ent_pop_nyc}!')
+            are_you_happy = input(f'Are you happy going to {random_ent_pop_nyc}? (y/n) ')
+            if are_you_happy == "y":
+                random_ent_nyc = random_ent_pop_nyc
+                print(f'Youn are now going to {random_ent_pop_nyc}!')
+            elif are_you_happy == "n":
+                 if random_ent_pop_nyc == "Top of The Rock: Observation Deck":
+                    remove_top_of_the_rock = nyc_entertainment_list.pop(1)
+                    random_ent_pop_nyc = random.choice(nyc_transportation_list)
+                    print(f'You are now going to to {random_ent_pop_nyc}.')
+                    are_you_happy = input(f'Are you happy going to {random_ent_pop_nyc}? (y/n) ')
+                    if are_you_happy == "y":
+                        random_ent_nyc = random_ent_pop_nyc
+                        print(f'Great! you will be going to {random_ent_pop_nyc}!')
+                    elif are_you_happy == "n":
+                        if random_ent_pop_nyc == "Broadway":
+                            print(f'We are going to use a {random_ent_pop_nyc} as your form of entertainment because it is the last option.')
+                            are_you_happy = input(f'{random_ent_pop_nyc} is your last option. Please type "y" to continue using the vacation generator. (y/n) ')
+                            if are_you_happy == "y":
+                                random_ent_nyc = random_ent_pop_nyc
+                                print(f'Great! you will be going to {random_ent_pop_nyc}!')
+                             
 
 
 # Boston List Functions
 elif random_dest == "Boston":
       random_rest_boston = random.choice(boston_restaurant_list)
 
-      if random_rest_boston == "Del Frisco's Double Eagle Steakhouse":
-         are_you_happy = input(f'Are you happy with {random_rest_boston}? (y/n) ')
-         if are_you_happy =="y":
-          print("Okay , great!")
+      if random_trans_nyc == "Uber XL":
+         are_you_happy = input(f'Are you happy with {random_trans_nyc}? ')
+         if are_you_happy == "y":
+             print(f'Great! your transportation method will be {random_trans_nyc}')
          elif are_you_happy == "n":
-          print("we will figure that out")
+            remove_uber = nyc_transportation_list.pop(2)
+            random_trans_pop_nyc = random.choice(nyc_transportation_list)
+            print(f'You are now going to use a {random_trans_pop_nyc}!')
+            are_you_happy = input(f'Are you happy with taking {random_trans_pop_nyc} (y/n) ')
+            if are_you_happy == "y":
+                random_trans_nyc = random_trans_pop_nyc
+                print(f'Youn are now going to {random_trans_pop_nyc}!')
+            elif are_you_happy == "n":
+                 if random_trans_pop_nyc == "Subway":
+                    remove_subway = random_trans_nyc.pop(1)
+                    random_trans_pop_nyc = random.choice(nyc_transportation_list)
+                    print(f'You are now going to to use {random_trans_pop_nyc} as transportation.')
+                    are_you_happy = input(f'Are you happy using {random_trans_pop_nyc} as a form of transportation? (y/n) ')
+                    if are_you_happy == "y":
+                        random_trans_nyc = random_trans_pop_nyc
+                        print(f'Great! you will be using {random_trans_pop_nyc} to get around!')
+                    elif are_you_happy == "n":
+                        if random_trans_pop_nyc == "Taxi Cab":
+                            print(f'We are going to use a {random_trans_pop_nyc} as your form of transportation because it is the last option.')
+                            are_you_happy = input(f'{random_trans_pop_nyc} is your last option. Please type "y" to continue using the vacation generator. (y/n) ')
+                            if are_you_happy == "y":
+                                random_trans_nyc = random_trans_pop_nyc
+                                print(f'Great! you will be using {random_trans_pop_nyc} to get around!')
 
-      elif random_rest_boston == "Bostonia Public House":
-          are_you_happy = input(f'Are you happy with {random_rest_boston}? (y/n) ')
-          if are_you_happy == "y":
-            print("Great! that sounds good!")
-          elif are_you_happy == "n":
-            print("Wait a dang second!")
+      elif random_trans_nyc == "Uber XL":
+            are_you_happy = input(f'Are you happy with {random_trans_nyc}? ')
+            if are_you_happy == "y":
+              print(f'Great! your transportation method will be {random_trans_nyc}')
+            elif are_you_happy == "n":
+              remove_uber = nyc_transportation_list.pop(2)
+              random_trans_pop_nyc = random.choice(nyc_transportation_list)
+              print(f'You are now going to use a {random_trans_pop_nyc}!')
+              are_you_happy = input(f'Are you happy with taking {random_trans_pop_nyc} (y/n) ')
+              if are_you_happy == "y":
+                random_trans_nyc = random_trans_pop_nyc
+                print(f'Youn are now going to {random_trans_pop_nyc}!')
+              elif are_you_happy == "n":
+                 if random_trans_pop_nyc == "Subway":
+                    remove_subway = random_trans_nyc.pop(1)
+                    random_trans_pop_nyc = random.choice(nyc_transportation_list)
+                    print(f'You are now going to to use {random_trans_pop_nyc} as transportation.')
+                    are_you_happy = input(f'Are you happy using {random_trans_pop_nyc} as a form of transportation? (y/n) ')
+                    if are_you_happy == "y":
+                        random_trans_nyc = random_trans_pop_nyc
+                        print(f'Great! you will be using {random_trans_pop_nyc} to get around!')
+                    elif are_you_happy == "n":
+                        if random_trans_pop_nyc == "Taxi Cab":
+                            print(f'We are going to use a {random_trans_pop_nyc} as your form of transportation because it is the last option.')
+                            are_you_happy = input(f'{random_trans_pop_nyc} is your last option. Please type "y" to continue using the vacation generator. (y/n) ')
+                            if are_you_happy == "y":
+                                random_trans_nyc = random_trans_pop_nyc
+                                print(f'Great! you will be using {random_trans_pop_nyc} to get around!')
 
-      elif random_rest_boston == "Buttermilk & Bourbon":
-          are_you_happy = input(f'Are you happy with {random_rest_boston}? (y/n) ')
-          if are_you_happy == "y":
-            print("Great! that sounds good!")
-          elif are_you_happy == "n":
-            print("Wait a dang second!")
+      if random_trans_nyc == "Uber XL":
+         are_you_happy = input(f'Are you happy with {random_trans_nyc}? ')
+         if are_you_happy == "y":
+             print(f'Great! your transportation method will be {random_trans_nyc}')
+         elif are_you_happy == "n":
+            remove_uber = nyc_transportation_list.pop(2)
+            random_trans_pop_nyc = random.choice(nyc_transportation_list)
+            print(f'You are now going to use a {random_trans_pop_nyc}!')
+            are_you_happy = input(f'Are you happy with taking {random_trans_pop_nyc} (y/n) ')
+            if are_you_happy == "y":
+                random_trans_nyc = random_trans_pop_nyc
+                print(f'Youn are now going to {random_trans_pop_nyc}!')
+            elif are_you_happy == "n":
+                 if random_trans_pop_nyc == "Subway":
+                    remove_subway = random_trans_nyc.pop(1)
+                    random_trans_pop_nyc = random.choice(nyc_transportation_list)
+                    print(f'You are now going to to use {random_trans_pop_nyc} as transportation.')
+                    are_you_happy = input(f'Are you happy using {random_trans_pop_nyc} as a form of transportation? (y/n) ')
+                    if are_you_happy == "y":
+                        random_trans_nyc = random_trans_pop_nyc
+                        print(f'Great! you will be using {random_trans_pop_nyc} to get around!')
+                    elif are_you_happy == "n":
+                        if random_trans_pop_nyc == "Taxi Cab":
+                            print(f'We are going to use a {random_trans_pop_nyc} as your form of transportation because it is the last option.')
+                            are_you_happy = input(f'{random_trans_pop_nyc} is your last option. Please type "y" to continue using the vacation generator. (y/n) ')
+                            if are_you_happy == "y":
+                                random_trans_nyc = random_trans_pop_nyc
+                                print(f'Great! you will be using {random_trans_pop_nyc} to get around!')
 
 # Boston Transportation Functions
       if random_dest == "Boston":
@@ -454,7 +626,7 @@ if random_dest == "St Augustine,Florida":
 if random_dest == "New York City":
     confirm_trip = input(f'Are you happy with all of your vacation details? (y/n) ')
     if confirm_trip == "y":
-     print(f'Congratulations on confirming your vacation details. You will be going to {random_dest}. Once there, you will be using {random_trans_nyc} to get to {random_ent_nyc}. Once there, you will enjoy one of {random_dest}s many attractions. After {random_ent_nyc} you will take a {random_trans_nyc} to {random_rest} where you will enjoy a great meal!')
+     print(f'Congratulations on confirming your vacation details. You will be going to {random_dest}. Once there, you will be using {random_trans_nyc} to get to {random_ent_nyc}. Once there, you will enjoy one of {random_dest}s many attractions. After {random_ent_nyc} you will take a {random_trans_nyc} to {random_rest_nyc} where you will enjoy a great meal!')
 
 
 if random_dest == "Boston":
